@@ -5,7 +5,8 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th class="title-center">LastName</th>
+                        <th class="title-center">First Name</th>
+                        <th class="title-center">Last Name</th>
                         <th class="title-center">Designation</th>
                         <th class="title-center">Salary($)</th>
                         <th class="title-center">Action</th>
@@ -13,7 +14,8 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let user of users">
-                        <td class="title-center">{{user.name}}</td>
+                        <td class="title-center">{{user.firstname}}</td>
+                        <td class="title-center">{{user.lastname}}</td>
                         <td class="title-center">{{user.designation}}</td>
                         <td class="title-center">{{user.salary}}</td>
                         <td class="title-center">
@@ -37,9 +39,13 @@
         </button>
     </div>
     <div class="modal-body">
-        <label for="name">LastName</label>
-        <input type="text" class="form-control" name="name" [(ngModel)]="user.name">
-        <p class="text-danger">{{errorMsg.name}}</p>
+        <label for="name">First Name</label>
+        <input type="text" class="form-control" name="firstname" [(ngModel)]="user.firstname">
+        <p class="text-danger">{{errorMsg.firstname}}</p>
+
+        <label for="name">Last Name</label>
+        <input type="text" class="form-control" name="lastname" [(ngModel)]="user.lastname">
+        <p class="text-danger">{{errorMsg.lastname}}</p>
 
         <label for="designation">Designation</label>
         <input type="text" class="form-control" name="designation" [(ngModel)]="user.designation">
@@ -61,9 +67,13 @@
         </button>
     </div>
     <div class="modal-body">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" name="name" [(ngModel)]="editUser.name">
-        <p class="text-danger">{{errorMsg.name}}</p>
+        <label for="name">First Name</label>
+        <input type="text" class="form-control" name="firstname" [(ngModel)]="editUser.firstname">
+        <p class="text-danger">{{errorMsg.firstname}}</p>
+
+        <label for="name">Last Name</label>
+        <input type="text" class="form-control" name="lastname" [(ngModel)]="editUser.lastname">
+        <p class="text-danger">{{errorMsg.lastname}}</p>
 
         <label for="designation">Designation</label>
         <input type="text" class="form-control" name="designation" [(ngModel)]="editUser.designation">

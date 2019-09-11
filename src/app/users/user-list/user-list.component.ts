@@ -29,11 +29,12 @@ export class UserListComponent implements OnInit {
         })
     }
     onSave() {
-        this.errorMsg.name = this.errorMsg.designation = '';
-        !this.user.name ? this.errorMsg.name = "Name required" : '';
+        this.errorMsg.lastname = this.errorMsg.designation = this.errorMsg.firstname = '';
+        !this.user.firstname ? this.errorMsg.firstname = "FirstName required" : '';
+        !this.user.lastname ? this.errorMsg.lastname = "LastName required" : '';
         !this.user.designation ? this.errorMsg.designation = "Designation required" : '';
         !this.user.salary ? this.errorMsg.salary = "Salary required" : '';
-        if(!this.user.name || !this.user.designation || !this.user.salary){
+        if(!this.user.firstname || !this.user.lastname || !this.user.designation || !this.user.salary){
             return;
         }
         this.userService.post(this.user).subscribe(res => {
@@ -76,13 +77,15 @@ export class UserListComponent implements OnInit {
 }
 
 class User {
-    name: string;
+    firstname:string;
+    lastname: string;
     designation:string;
     salary: Float32Array;
 }
 
 class ErrorMsg {
-    name: string;
+    firstname:string;
+    lastname: string;
     designation:string;
     salary: string
 }
