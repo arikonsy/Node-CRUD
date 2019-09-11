@@ -1,23 +1,27 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <button class="btn btn-primary pull-right" (click)="openModalAdd(add)">Add</button>
+            <button class="btn btn-primary pull-right space" (click)="openModalAdd(add)">Add</button>
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>LastName</th>
-                        <th>Designation</th>
-                        <th>Salary($)</th>
-                        <th colspan="2">Action</th>
+                        <th class="title-center">LastName</th>
+                        <th class="title-center">Designation</th>
+                        <th class="title-center">Salary($)</th>
+                        <th class="title-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let user of users">
-                        <td>{{user.name}}</td>
-                        <td>{{user.designation}}</td>
-                        <td>{{user.salary}}</td>
-                        <td><button class="btn btn-warning" (click)="openModalEdit(edit, user)">Edit</button></td>
-                        <td><button class="btn btn-danger"  (click)="openModalDelete(delete, user._id)">Delete</button></td>
+                        <td class="title-center">{{user.name}}</td>
+                        <td class="title-center">{{user.designation}}</td>
+                        <td class="title-center">{{user.salary}}</td>
+                        <td class="title-center">
+                            <span class="space-right">
+                                <button class="btn btn-warning" (click)="openModalEdit(edit, user)"> Edit </button>
+                            </span>
+                            <button class="btn btn-danger"  (click)="openModalDelete(delete, user._id)">Delete</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
