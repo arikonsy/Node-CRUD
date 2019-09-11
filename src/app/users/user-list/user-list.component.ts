@@ -66,6 +66,7 @@ export class UserListComponent implements OnInit {
     }
     openModalAdd(template: TemplateRef<any>){
         this.modalRef = this.modalService.show(template);
+        this.editUser = this.user;
     }
     openModalEdit(template: TemplateRef<any>, user) {
         this.modalRef = this.modalService.show(template);
