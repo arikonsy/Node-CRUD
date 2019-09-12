@@ -54,7 +54,7 @@ app.post("/api/SaveUser", function(req,res){
 //Define /api/UpdateUser router
 app.post("/api/UpdateUser", function(req,res){
     var mod = new model(req.body);
-    model.findByIdAndUpdate(req.body._id, {firstname: req.body.firstname, name: req.body.name, designation: req.body.designation, salary: req.body.salary },
+    model.findByIdAndUpdate(req.body._id, {firstname: req.body.firstname, lastname: req.body.lastname, designation: req.body.designation, salary: req.body.salary },
         function(err){
             if(err){
                 res.send(err);
