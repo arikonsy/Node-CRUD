@@ -19,10 +19,8 @@
                         <td class="title-center">{{user.designation}}</td>
                         <td class="title-center">{{user.salary}}</td>
                         <td class="title-center">
-                            <span class="space-right">
-                                <button class="btn btn-warning" (click)="openModalEdit(edit, user)"> Edit </button>
-                            </span>
-                            <button class="btn btn-danger"  (click)="openModalDelete(delete, user._id)">Delete</button>
+                            <i class='fas fa-edit' style='font-size:20px;color:green;margin-right:10px' (click)="openModalEdit(edit, user)"></i>
+                            <i class='fas fa-eraser' style='font-size:22px;color:red' (click)="openModalDelete(delete, user._id)"></i>
                         </td>
                     </tr>
                 </tbody>
