@@ -1,7 +1,19 @@
-<div class = "jumbotron text-center">
-    <h1>NODE CURD PROJECT</h1>
-    <p>Welcome</p>
-    <a class ="" routerLink="">Home</a> | 
-    <a class ="" routerLink="/users">Users</a>
+<header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item active" style="margin-right: 10px" style="display: flex">
+                <span><img src="assets/icons/angular-icon.png" style="width:20px; margin-top: 10px"/></span>
+                <a class="nav-link" href="#"><i class="fas fa-coffee" style="font-family:Georgia, 'Times New Roman', Times, serif">Node CURD</i></a>
+            </li>
+            <li class="nav-item">
+                <a class ="nav-link" routerLink="">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class ="nav-link" routerLink="/users">Users</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div  style="margin-top: 5%">
+    <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>
