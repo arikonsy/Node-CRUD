@@ -14,9 +14,9 @@ export class UserService {
         return this.http.post(this.baseUrl + '/api/SaveUser', data);
     }
     update(data) {
-        return this.http.post(this.baseUrl + '/api/UpdateUser', data);
+        return this.http.put(this.baseUrl + '/api/UpdateUser', data);
     }
-    delete(id) {
-        return this.http.post(this.baseUrl + '/api/deleteUser',id);
+    delete(object) {
+        return this.http.delete(this.baseUrl + `/api/deleteUser/${object.id}`);
     }
 }

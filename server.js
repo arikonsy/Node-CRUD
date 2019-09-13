@@ -52,7 +52,7 @@ app.post("/api/SaveUser", function(req,res){
     })
 })
 //Define /api/UpdateUser router
-app.post("/api/UpdateUser", function(req,res){
+app.put("/api/UpdateUser", function(req,res){
     var mod = new model(req.body);
     model.findByIdAndUpdate(req.body._id, {firstname: req.body.firstname, lastname: req.body.lastname, designation: req.body.designation, salary: req.body.salary },
         function(err){
@@ -65,8 +65,8 @@ app.post("/api/UpdateUser", function(req,res){
         });
 })
 
-app.post("/api/deleteUser", function(req,res){
-    model.remove({ _id:req.body.id }, function(err){
+app.delete("/api/deleteUser/:id", function(req,res){
+    model.remove({ _id:req.params.id }, function(err){
         if(err){
             res.send(err);
         }
