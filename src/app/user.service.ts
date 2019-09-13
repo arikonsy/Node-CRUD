@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
 
     constructor(private http: HttpClient) { }
-    baseUrl = "http://localhost:8080";
+    baseUrl = "http://localhost:8000";
     get(){
         return this.http.get(this.baseUrl + '/api/getUser')
     }

@@ -44,6 +44,7 @@ export class UserListComponent implements OnInit {
         },error=>{
             console.log(error);
         });
+        this.user.lastname = this.user.designation = this.user.firstname = this.user.salary = '';
     }
     onUpdate() {
         this.userService.update(this.editUser).subscribe(res => {
@@ -67,7 +68,7 @@ export class UserListComponent implements OnInit {
     }
     openModalAdd(template: TemplateRef<any>){
         this.modalRef = this.modalService.show(template);
-        this.editUser = this.user;
+
     }
     openModalEdit(template: TemplateRef<any>, user) {
         this.modalRef = this.modalService.show(template);
@@ -80,7 +81,7 @@ class User {
     firstname:string;
     lastname: string;
     designation:string;
-    salary: Float32Array;
+    salary: string;
 }
 
 class ErrorMsg {
